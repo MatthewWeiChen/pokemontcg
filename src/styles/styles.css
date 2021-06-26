@@ -1,0 +1,35 @@
+.wrapper {
+  margin: 3rem 2rem;
+  margin-bottom: 0;
+  display:flex;
+}
+
+.pokemon-font {
+  font-family: 'Bangers', cursive !important;
+
+}
+
+body {
+  background-color: rgb(72, 77, 109);
+}
+
+.title {
+  font-size: 2em;
+}
+
+.navbar {
+  background-color: rgb(43, 25, 61);
+}
+
+.search-bar {
+  background: rgb(240, 237, 237);
+}
+
+.subtitle {
+  color: rgb(218, 218, 218);
+  size: 1.5em;
+}
+
+span {
+  color:rgb(197, 151, 157);
+}

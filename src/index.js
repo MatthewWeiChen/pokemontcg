@@ -1,4 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.css'
+import './styles/fontColor.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/index.css';

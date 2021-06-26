@@ -6,9 +6,9 @@ class NavbarPokemon extends React.Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" expand="xl" variant="dark">
-          <Navbar.Brand href="#home" className="text-white">
-            <img src={pokeball} width="30" height="30" alt="pokeball" /> Pokemon
+        <Navbar bg="navbar" expand="xl" variant="dark">
+          <Navbar.Brand href="#home" className="text-white pokemon-font">
+            <img src={pokeball} width="30" height="30" alt="pokeball" /> Pokémon
             TCG
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
