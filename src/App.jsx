@@ -1,17 +1,17 @@
 import React from 'react';
-import Homepage from './components/homepage'
+import Homepage from './components/homepage';
 
-class App extends React.Component{
-  constructor(props){
+class App extends React.Component {
+  constructor(props) {
     super(props);
   }
 
-  render(){
+  render() {
     return (
       <>
-        <Homepage/>
+        <Homepage />
       </>
-    )
+    );
   }
 }
 
