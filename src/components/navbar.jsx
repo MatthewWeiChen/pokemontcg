@@ -7,14 +7,20 @@ class NavbarPokemon extends React.Component {
     return (
       <>
         <Navbar bg="navbar" expand="xl" variant="dark">
-          <Navbar.Brand href="#home" className="text-white pokemon-font">
+          <Navbar.Brand
+            href="#home"
+            className="text-white pokemon-font nav-margin"
+          >
             <img src={pokeball} width="30" height="30" alt="pokeball" /> Pokémon
             TCG
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="nav-margin"
+          />
           <Navbar.Collapse id="basic-navbar-nav" className="white">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="#link">Link</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

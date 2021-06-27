@@ -33,3 +33,8 @@ body {
 span {
   color:rgb(197, 151, 157);
 }
+
+.nav-margin {
+  margin-left: 8px;
+  margin-right: 5px;
+}
