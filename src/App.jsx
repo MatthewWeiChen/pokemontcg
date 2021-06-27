@@ -1,8 +1,8 @@
 import React from 'react';
 import Homepage from './components/homepage';
 import Navbar from './components/navbar';
-import CardList from './components/cardList';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import CardList from './components/Cards/cardList';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,6 +16,7 @@ class App extends React.Component {
 
     this.searchForCard = this.searchForCard.bind(this);
     this.setSearchParamters = this.setSearchParamters.bind(this);
+    this.redirect = this.redirect.bind(this);
   }
 
   async searchForCard(pokemon) {
@@ -28,6 +29,11 @@ class App extends React.Component {
     );
     const json = await response.json();
     this.setState({ list: json, isSearching: true });
+    this.redirect();
+  }
+
+  redirect() {
+    <Redirect to="/list" />;
   }
 
   setSearchParamters(keyword) {
@@ -38,26 +44,31 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Navbar />
-        <Router>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={props => (
-                <Homepage
-                  search={this.searchForCard}
-                  setParameter={this.setSearchParamters}
-                />
-              )}
-            />
-            <Route
-              exact
-              path="/list"
-              render={() => <CardList valid={this.state.isSearching} />}
-              cardList={this.state.list}
-            />
-          </Switch>
-        </Router>
+
+        {this.state.isSearching ? <Redirect push to="/list" /> : null}
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <Homepage
+                search={this.searchForCard}
+                setParameter={this.setSearchParamters}
+              />
+            )}
+          />
+
+          <Route
+            exact
+            path="/list"
+            render={() => (
+              <CardList
+                valid={this.state.isSearching}
+                cardList={this.state.list}
+              />
+            )}
+          />
+        </Switch>
       </React.Fragment>
     );
   }

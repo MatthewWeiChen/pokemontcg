@@ -38,3 +38,8 @@ span {
   margin-left: 8px;
   margin-right: 5px;
 }
+
+.grid {
+  display: flex;
+  flex-wrap:wrap;
+}

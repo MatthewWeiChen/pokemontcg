@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, FormControl, InputGroup } from 'react-bootstrap';
-import { withRouter } from 'react-router';
 import snorlax from '../images/snorlax.png';
 
 class SearchBar extends React.Component {
@@ -18,7 +17,6 @@ class SearchBar extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     this.props.search(this.state.search);
-    this.props.history.push('/list');
   }
 
   handleChange(event) {
@@ -49,4 +47,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default withRouter(SearchBar);
+export default SearchBar;
