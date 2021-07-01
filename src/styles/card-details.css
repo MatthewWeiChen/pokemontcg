@@ -1,0 +1,38 @@
+.card-detail-wrapper{
+  margin: 3rem 2rem;
+  margin-bottom: 0;
+  display:flex;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.card-detail-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.card-detail-column {
+  display:flex;
+}
+
+.detail-column {
+  padding: 10px;
+  width: 50%;
+  margin-left: 20%;  
+  display: block;
+  min-width: 20vmax;
+}
+
+@media only screen 
+  and (min-device-width: 375px)
+  and (max-device-width: 667px) {
+    .card-detail-wrapper{
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .card-detail-column{
+      flex-direction: column;
+      
+    }
+  }

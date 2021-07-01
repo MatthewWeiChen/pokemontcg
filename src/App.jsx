@@ -2,22 +2,26 @@ import React from 'react';
 import Homepage from './components/homepage';
 import Navbar from './components/navbar';
 import CardList from './components/Cards/cardList';
+import CardDetail from './components/Cards/cardDetail';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     const storage = localStorage.getItem('pokemon');
+    const selectedPokemon = localStorage.getItem('selectedCard');
     this.state = {
       list: {},
       search: '',
       isSearching: false,
-      storage: storage ? JSON.parse(storage) : null
+      storage: storage ? JSON.parse(storage) : null,
+      selectedCard: selectedPokemon ? JSON.parse(selectedPokemon) : null,
+      madeSelection: false
     };
 
     this.searchForCard = this.searchForCard.bind(this);
     this.setSearchParamters = this.setSearchParamters.bind(this);
-    this.redirect = this.redirect.bind(this);
+    this.handleSingleCardClick = this.handleSingleCardClick.bind(this);
   }
 
   async searchForCard(pokemon) {
@@ -31,23 +35,32 @@ class App extends React.Component {
     const json = await response.json();
     localStorage.setItem('pokemon', JSON.stringify(json));
     this.setState({ list: json, isSearching: true });
-    this.redirect();
-  }
-
-  redirect() {
-    <Redirect to="/list" />;
   }
 
   setSearchParamters(keyword) {
     this.setState({ search: keyword.search });
   }
 
+  async handleSingleCardClick(card) {
+    const headers = { 'X-Api-Key': '6ac7ac45-69ff-4e59-ba49-b98b7d5b8b4e' };
+    const response = await fetch(`https://api.pokemontcg.io/v2/cards/${card}`, {
+      headers
+    });
+    const json = await response.json();
+    localStorage.setItem('selectedCard', JSON.stringify(json));
+    this.setState({ madeSelection: true, selectedCard: json.data });
+  }
+
   render() {
+    const cardDetailRoute = `/card/${this.state.selectedCard.name}`;
+
     return (
       <React.Fragment>
         <Navbar />
-
         {this.state.isSearching ? <Redirect push to="/list" /> : null}
+        {this.state.madeSelection ? (
+          <Redirect push to={cardDetailRoute} />
+        ) : null}
         <Switch>
           <Route
             exact
@@ -71,8 +84,14 @@ class App extends React.Component {
                     ? this.state.list
                     : this.state.storage
                 }
+                cardClick={this.handleSingleCardClick}
               />
             )}
+          />
+          <Route
+            exact
+            path={cardDetailRoute}
+            render={() => <CardDetail card={this.state.selectedCard} />}
           />
         </Switch>
       </React.Fragment>

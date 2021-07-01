@@ -4,8 +4,13 @@ const Card = props => {
   return (
     <>
       <div className="card-column">
-        <a href={props.image}>
-          <img src={props.image} alt="" className="individual-card" />
+        <a>
+          <img
+            src={props.image}
+            alt=""
+            className="individual-card"
+            onClick={async () => await props.cardClick(props.id)}
+          />
         </a>
       </div>
     </>
