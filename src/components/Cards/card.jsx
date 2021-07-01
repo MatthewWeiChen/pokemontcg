@@ -1,9 +1,13 @@
 import React from 'react';
-
+import { Col } from 'react-bootstrap';
 const Card = props => {
   return (
     <>
-      <img src={props.image} alt="" />
+      <div className="card-column">
+        <a href={props.image}>
+          <img src={props.image} alt="" className="individual-card" />
+        </a>
+      </div>
     </>
   );
 };

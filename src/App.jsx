@@ -7,11 +7,12 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 class App extends React.Component {
   constructor(props) {
     super(props);
-
+    const storage = localStorage.getItem('pokemon');
     this.state = {
-      list: [],
+      list: {},
       search: '',
-      isSearching: false
+      isSearching: false,
+      storage: storage ? JSON.parse(storage) : null
     };
 
     this.searchForCard = this.searchForCard.bind(this);
@@ -28,6 +29,7 @@ class App extends React.Component {
       }
     );
     const json = await response.json();
+    localStorage.setItem('pokemon', JSON.stringify(json));
     this.setState({ list: json, isSearching: true });
     this.redirect();
   }
@@ -64,7 +66,11 @@ class App extends React.Component {
             render={() => (
               <CardList
                 valid={this.state.isSearching}
-                cardList={this.state.list}
+                cardList={
+                  Object.keys(this.state.list).length > 0
+                    ? this.state.list
+                    : this.state.storage
+                }
               />
             )}
           />

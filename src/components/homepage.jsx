@@ -12,8 +12,8 @@ class Homepage extends React.Component {
       <>
         <div className="wrapper">
           <Container>
-            <Row>
-              <Col>
+            <Row className="justify-content-center">
+              <Col md={7} xl={7}>
                 <div className="text-center text-white title pokemon-font">
                   Pokémon TCG Search
                 </div>
