@@ -5,12 +5,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 const CardDetail = props => {
   const pokemonName = `${props.card.name}`;
   const pokemonImage = `${props.card.images.large}`;
-  console.log(props);
   return (
     <>
       <div className="card-detail-wrapper">
         <Container>
-          <div className="card-detail-column">
+          <Row>
             <div className="one-third card-edges">
               <img
                 src={pokemonImage}
@@ -21,7 +20,7 @@ const CardDetail = props => {
             <div className="detail-column">
               <div className="heading">{pokemonName}</div>
             </div>
-          </div>
+          </Row>
         </Container>
       </div>
     </>

@@ -16,12 +16,15 @@
   display:flex;
 }
 
+.one-third {
+  width: 33.3%;
+}
+
 .detail-column {
-  padding: 10px;
   width: 50%;
-  margin-left: 20%;  
+  margin-left: 16%;  
   display: block;
-  min-width: 20vmax;
+  padding: 10px;
 }
 
 @media only screen 
@@ -33,6 +36,8 @@
     }
     .card-detail-column{
       flex-direction: column;
-      
+    }
+    .one-third{
+      width: 100%;
     }
   }
