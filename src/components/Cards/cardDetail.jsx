@@ -10,16 +10,18 @@ const CardDetail = props => {
       <div className="card-detail-wrapper">
         <Container>
           <Row>
-            <div className="one-third card-edges">
+            <Col md={6}>
               <img
                 src={pokemonImage}
                 alt={pokemonName}
                 className="card-detail-img"
               />
-            </div>
-            <div className="detail-column">
-              <div className="heading">{pokemonName}</div>
-            </div>
+            </Col>
+            <Col md={6}>
+              <div className="detail-column">
+                <div className="heading">{pokemonName}</div>
+              </div>
+            </Col>
           </Row>
         </Container>
       </div>

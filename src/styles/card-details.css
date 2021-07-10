@@ -7,7 +7,7 @@
 }
 
 .card-detail-img {
-  max-width: 100%;
+  max-width: 30vmax;
   height: auto;
   border-radius: 10px;
 }
@@ -38,6 +38,6 @@
       flex-direction: column;
     }
     .one-third{
-      width: 100%;
+      min-width: 100%;
     }
   }
