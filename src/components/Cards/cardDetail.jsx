@@ -7,24 +7,22 @@ const CardDetail = props => {
   const pokemonImage = `${props.card.images.large}`;
   return (
     <>
-      <div className="card-detail-wrapper">
-        <Container>
-          <Row>
-            <Col md={6}>
-              <img
-                src={pokemonImage}
-                alt={pokemonName}
-                className="card-detail-img"
-              />
-            </Col>
-            <Col md={6}>
-              <div className="detail-column">
-                <div className="heading">{pokemonName}</div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Container fluid>
+        <Row className="card-detail-row">
+          <Col md={6}>
+            <img
+              src={pokemonImage}
+              alt={pokemonName}
+              className="card-detail-img"
+            />
+          </Col>
+          <Col md={6}>
+            <div className="detail-column">
+              <div className="heading">{pokemonName}</div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

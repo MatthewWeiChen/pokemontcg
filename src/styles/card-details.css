@@ -12,10 +12,6 @@
   border-radius: 10px;
 }
 
-.card-detail-column {
-  display:flex;
-}
-
 .one-third {
   width: 33.3%;
 }
@@ -25,10 +21,14 @@
 }
 
 .detail-column {
-  width: 50%;
-  margin-left: 16%;  
+  width: 100%;
   display: block;
   padding: 10px;
+}
+
+.card-detail-row{
+  justify-content: center;
+  margin: 3rem 2rem;
 }
 
 @media only screen 
@@ -37,6 +37,7 @@
     .card-detail-wrapper{
       flex-direction: column;
       flex-wrap: wrap;
+      align-items: center;
     }
     .card-detail-column{
       flex-direction: column;
