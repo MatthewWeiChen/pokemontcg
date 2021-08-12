@@ -1,6 +1,7 @@
 import React from 'react';
 import cardstyles from '../../styles/card-details.css';
 import Card from './card';
+import CardData from './cardData';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const CardDetail = (props) => {
@@ -21,8 +22,7 @@ const CardDetail = (props) => {
           </Col>
           <Col md={6}>
             <div className="detail-column">
-              <div className="detail-heading">{pokemonName}</div>
-              <div className="subtitle">{pokemonType}</div>
+              <CardData data={props} />
             </div>
           </Col>
         </Row>
