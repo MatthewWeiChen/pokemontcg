@@ -12,6 +12,16 @@
   width: 33.3%;
 }
 
+.subtitle {
+  font-size: 1.5rem;
+  color: rgb(218, 218, 218);
+}
+
+.detail-heading {
+  font-size: 2rem;
+  color: rgb(218, 218, 218);
+}
+
 
 .detail-column {
   width: 100%;

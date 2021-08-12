@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col } from 'react-bootstrap';
-const Card = props => {
+
+const Card = (props) => {
   return (
     <>
       <div className="card-column">
