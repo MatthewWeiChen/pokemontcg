@@ -1,11 +1,9 @@
 import React from 'react';
 
-const CardData = (props) => {
-  console.log(props);
-
+const CardData = ({ card }) => {
   return (
     <>
-      <div className="detail-heading"></div>
+      <div className="detail-heading">{card.name}</div>
       <div className="subtitle"></div>
     </>
   );

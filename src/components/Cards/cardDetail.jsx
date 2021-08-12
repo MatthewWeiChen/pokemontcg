@@ -22,7 +22,7 @@ const CardDetail = (props) => {
           </Col>
           <Col md={6}>
             <div className="detail-column">
-              <CardData data={props} />
+              <CardData card={props.card} />
             </div>
           </Col>
         </Row>
