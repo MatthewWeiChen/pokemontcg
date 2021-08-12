@@ -1,9 +1,5 @@
 .card-detail-wrapper{
-  margin: 3rem 2rem;
-  margin-bottom: 0;
-  display:flex;
-  height: 100%;
-  min-height: 100vh;
+  justify-content: center;
 }
 
 .card-detail-img {
@@ -16,9 +12,6 @@
   width: 33.3%;
 }
 
-.one-fifth{
-  width: 15%;
-}
 
 .detail-column {
   width: 100%;
