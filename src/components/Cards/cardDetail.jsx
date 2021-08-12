@@ -1,18 +1,16 @@
 import React from 'react';
 import cardstyles from '../../styles/card-details.css';
-import Card from './card';
 import CardData from './cardData';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Col } from 'react-bootstrap';
 
 const CardDetail = (props) => {
   const pokemonName = `${props.card.name}`;
   const pokemonImage = `${props.card.images.large}`;
-  const pokemonType = `Pokemon - ${props.card.subtypes[0]}`;
   console.log(props);
   return (
     <>
       <Container fluid>
-        <Row className="card-detail-row">
+        <div className="columns">
           <Col md={6}>
             <img
               src={pokemonImage}
@@ -25,7 +23,7 @@ const CardDetail = (props) => {
               <CardData card={props.card} />
             </div>
           </Col>
-        </Row>
+        </div>
       </Container>
     </>
   );
